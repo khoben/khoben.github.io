@@ -1,0 +1,11 @@
+baseURL = "https://xbn.dev"
+title = "xbn.dev"
+theme = "PaperMod"
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  ShowReadingTime = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
