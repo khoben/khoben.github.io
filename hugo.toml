@@ -9,3 +9,7 @@ theme = "PaperMod"
   ShowReadingTime = true
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
