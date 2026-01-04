@@ -9,6 +9,15 @@ theme = "PaperMod"
   ShowReadingTime = true
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
+  homeInfoParams:
+    Title: "Привет \U0001F44B"     
+  socialIcons:
+    - name: github
+      url: 'https://github.com/khoben'
+    - name: telegram
+      url: 'https://t.me/xbndev'
+    - name: email
+      url: 'mailto:me@xbn.dev'
 
 [caches]
   [caches.images]
