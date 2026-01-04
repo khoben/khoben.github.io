@@ -11,13 +11,13 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   [params.homeInfoParams]
     Title = "Привет \U0001F44B"    
-  [params.socialIcons]
+  [[params.socialIcons]]
     name = "github"
     url = "https://github.com/khoben"
-  [params.socialIcons]
+  [[params.socialIcons]]
     name = "telegram"
     url = "https://t.me/xbndev"
-  [params.socialIcons]
+  [[params.socialIcons]]
     name = "email"
     url = "mailto:me@xbn.dev"
 
