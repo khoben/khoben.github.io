@@ -9,6 +9,10 @@ draft: false
 images:
   - "cover.png"
 featured_image: "cover.png"
+cover:
+    image: "cover.png"
+    alt: "TeleMirror - github.com/khoben/telemirror"
+    relative: true
 ---
 
 Еще в 2020 году написал статью на vc.ru ["Создание и развертывание ретранслятора Telegram каналов, используя Python и Heroku"](https://vc.ru/dev/158757-sozdanie-i-razvertyvanie-retranslyatora-telegram-kanalov-ispolzuya-python-i-heroku). С тех пор, Heroku уже не предлагает бесплатный тариф. Но проект жив и обновляется.
@@ -34,6 +38,8 @@ client.start()
 client.run_until_disconnected()
 ```
 
+> Приём сообщения → Отправка сообщения
+
 Не хватает лишь хоть какой-то конфигурации и гибкости. Какие сообщения отбрасывать, изменять оригинальный текст, из какого канала в какой пересылать и т.д. 
 
 К простой схеме, описанной выше, добавляются модификаторы, которые можно назвать фильтрами.
@@ -44,23 +50,12 @@ class MessageFilter(Protocol):
     async def process(
         self, entity: EventEntity, event_type: Type[EventLike]
     ) -> FilterResult[EventEntity]:
-        """Process **entity** with filter
-
-        Args:
-            entity (`EventEntity`): Source event entity
-            event_type (`Type[EventLike]`): Type of event
-
-        Returns:
-            `FilterResult[EventEntity]`:
-                Indicates that the filtered message should be forwarded
-
-                Processed entity
-        """
         if isinstance(entity, EventMessage):
+            # Обработка сообщения: продолжить, изменить, отбросить
             return await self._process_message(entity, event_type)
 
         if isinstance(entity, list):
-            # Check for `EventAlbumMessage`: List of messages
+            # Обработка группы сообщений - альбома
             return await self._process_album(entity, event_type)
 
         return FilterResult(FilterAction.CONTINUE, entity)
@@ -71,13 +66,6 @@ class MessageFilter(Protocol):
 Такие фильтры можно объединить в группу, которая будет выполнять поочередно, обрабатывая сообщение:
 ```python
 class CompositeMessageFilter(MessageFilter):
-    """Composite message filter that sequentially applies the filters
-
-    Args:
-        filters (`List[MessageFilter]`):
-            Message filters
-    """
-
     def __init__(self, filters: List[MessageFilter]) -> None:
         self._filters = filters
 
@@ -97,6 +85,8 @@ class CompositeMessageFilter(MessageFilter):
         return FilterResult(FilterAction.CONTINUE, entity)
 ```
 
+> Приём сообщения → (фильтры) → Отправка (или нет) обработанного сообщения
+
 Конфигурация для пересылки имеет вид:
 ```python
 CHAT_MAPPING: Dict[int, Dict[int, List["DirectionConfig"]]] = {}
@@ -110,7 +100,7 @@ class DirectionConfig:
     to_topic_id: Optional[int] = None
     mode: Literal["copy", "forward"] = "copy"
 ```
-В общем, конфигурация для ретранслирования состоит из маппинг каналов (*from->to*) и конфига для этого направления.
+В общем, конфигурация для ретранслирования состоит из маппинга каналов (*from->to*) и конфига для этого направления.
 
 ## Пример YAML конфигурации
 
@@ -155,4 +145,4 @@ directions:
 Telegram оптимизирует доставку сообщений, поэтому в реальном времени могут приходить не все обновления. Бывает такое, что со следующим перезапуском все же начинают приходить обновления.
 
 ## Где запустить
-К сожалению, на момент написания статьи не знаю сервиса предоставляющего бесплатный тариф для 24/7 работы приложения. Придется хорошенько поискать или все-таки арендовать свой виртуальный сервер, который может пригодится не только для ретранслятора. Но и для, например, организации виртуальной приватной сети.
+К сожалению, на момент написания статьи не знаю сервиса предоставляющего бесплатный тариф для постоянной работы приложения без засыпаний. Придется поискать или все-таки арендовать свой виртуальный сервер, который может пригодится не только для ретранслятора.
