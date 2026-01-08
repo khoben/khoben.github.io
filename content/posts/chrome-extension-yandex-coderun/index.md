@@ -6,6 +6,13 @@ summary: "Мой опыт создания и публикации Chrome-рас
 categories: blog
 tags: ["chrome extension", "yandex", "coderun", "web", "dev", "competitive programming"]
 draft: false
+images:
+  - "cover.png"
+featured_image: "cover.png"
+cover:
+    image: "cover.png"
+    alt: "Yandex CodeRun Timer"
+    relative: true
 ---
 
 ## Зачем понадобилось

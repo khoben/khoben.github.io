@@ -6,6 +6,13 @@ summary: "Опыт покупки домена в Cloudflare через серв
 categories: blog
 tags: [cloudflare, domain, blog, Russia, payments, pyyplbot]
 draft: false
+images:
+  - "domain-registered.png"
+featured_image: "domain-registered.png"
+cover:
+    image: "domain-registered.png"
+    alt: "Cloudflare регистрация домена"
+    relative: true
 ---
 
 ## Сравнение цен на домены
