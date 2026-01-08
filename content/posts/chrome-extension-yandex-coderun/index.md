@@ -26,6 +26,9 @@ cover:
 - Синхронизация состояния таймера с несколькими вкладками
 - Настраиваемый авто-старт таймера при открытии страницы с задачей
 
+</> **Исходный код**:
+https://github.com/khoben/yandex-coderun-timer
+
 📥 **Скачать Yandex CodeRun Timer в Chrome Web Store:**  
 https://chromewebstore.google.com/detail/yandexcoderun-timer/gdceapilfngabjiphgpilfnnhmpfoaci
 
