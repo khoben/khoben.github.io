@@ -256,10 +256,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 ```
 
 | Permission    | Purpose      |
-|--------------- -|---------------|
-| webNavigation  | Tracking the address with a task   |
-| scripting      | Embedding a timer in the page source code  |
-| storage        | Storing the timer status |
+|----------------|---------------|
+| webNavigation  | Tracking the URL with a task   |
+| scripting      | Injecting a timer in the page source code  |
+| storage        | Storing the timer state |
 
 ---
 
