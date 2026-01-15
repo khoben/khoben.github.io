@@ -17,7 +17,7 @@ cover:
 
 Еще в 2020 году написал статью на vc.ru ["Создание и развертывание ретранслятора Telegram каналов, используя Python и Heroku"](https://vc.ru/dev/158757-sozdanie-i-razvertyvanie-retranslyatora-telegram-kanalov-ispolzuya-python-i-heroku). С тех пор, Heroku уже не предлагает бесплатный тариф. Но проект жив и обновляется.
 
-Репозиторий проекта: https://github.com/khoben/telemirror
+</> Репозиторий проекта: https://github.com/khoben/telemirror
 
 Собственно, нет ничего сверхъестественного в пересылке: получаем сообщение из канала-источника и отправляем его копию в канал-приёмник.
 
@@ -132,7 +132,7 @@ directions:
             ? "r'badword.*'"
 ```
 
-Подробнее смотрите в репозитории проекта: https://github.com/khoben/telemirror
+</> Подробнее смотрите в репозитории проекта: https://github.com/khoben/telemirror
 
 ## Возможные проблемы
 

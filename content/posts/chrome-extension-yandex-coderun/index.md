@@ -280,5 +280,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 ## Итог
 Всегда хотел попробовать сделать расширение для Chrome, тем более подвернулся такой повод. Теперь с помошью Yandex Coderun Timer можно отслеживать сколько времени реально уходит на задачу: таймер всегда на виду в интерфейсе, не нужно пользоваться сторонними приложениями и вручную засекать время.
 
+</> **Исходный код**:
+https://github.com/khoben/yandex-coderun-timer
+
 📥 **Скачать Yandex CodeRun Timer в Chrome Web Store:**  
 https://chromewebstore.google.com/detail/yandexcoderun-timer/gdceapilfngabjiphgpilfnnhmpfoaci

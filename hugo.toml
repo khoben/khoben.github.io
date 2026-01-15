@@ -2,30 +2,72 @@ baseURL = "https://xbn.dev"
 title = "xbn.dev"
 theme = "PaperMod"
 
+defaultContentLanguage = "ru"
+defaultContentLanguageInSubdir = false
+
 [pagination]
   pagerSize = 10
 
 [params]
+  ShowReadingTime = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  displayFullLangName = true
+
   [params.assets]
     favicon = "/favicon.ico"
     favicon16x16 = "/favicon-16x16.png"
     favicon32x32 = "/favicon-32x32.png"
     apple_touch_icon = "/apple-touch-icon.png"
     manifest = "/site.webmanifest"
-  ShowReadingTime = true
-  ShowBreadCrumbs = true
-  ShowPostNavLinks = true
-  [params.homeInfoParams]
-    Title = "Привет \U0001F44B"    
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/khoben"
-  [[params.socialIcons]]
-    name = "telegram"
-    url = "https://t.me/xbndev"
-  [[params.socialIcons]]
-    name = "email"
-    url = "mailto:me@xbn.dev"
+
+[languages]
+
+  [languages.ru]
+    languageName = "RU"
+    weight = 1
+    title = "xbn.dev"
+
+    [languages.ru.params.homeInfoParams]
+      Title = "Привет 👋"
+
+    [[languages.ru.params.socialIcons]]
+      name = "github"
+      url = "https://github.com/khoben"
+      text = "/khoben"
+
+    [[languages.ru.params.socialIcons]]
+      name = "telegram"
+      url = "https://t.me/xbndev"
+      text = "@xbndev"
+
+    [[languages.ru.params.socialIcons]]
+      name = "email"
+      url = "mailto:me@xbn.dev"
+      text = "me@xbn.dev"
+
+  [languages.en]
+    languageName = "EN"
+    weight = 2
+    title = "xbn.dev"
+
+    [languages.en.params.homeInfoParams]
+      Title = "Hi 👋"
+
+    [[languages.en.params.socialIcons]]
+      name = "github"
+      url = "https://github.com/khoben"
+      text = "/khoben"
+
+    [[languages.en.params.socialIcons]]
+      name = "telegram"
+      url = "https://t.me/xbndev"
+      text = "@xbndev"
+
+    [[languages.en.params.socialIcons]]
+      name = "email"
+      url = "mailto:me@xbn.dev"
+      text = "me@xbn.dev"
 
 [caches]
   [caches.images]
