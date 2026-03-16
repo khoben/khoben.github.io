@@ -5,7 +5,7 @@ description: "Опыт покупки домена в Cloudflare через се
 summary: "Опыт покупки домена в Cloudflare через сервис виртуальных карт"
 categories: blog
 tags: [cloudflare, domain, blog, Russia, payments, pyyplbot]
-draft: false
+draft: true
 images:
   - "domain-registered.png"
 featured_image: "domain-registered.png"
